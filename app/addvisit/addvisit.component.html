@@ -1,0 +1,145 @@
+ <!-- =============== Navigation ================ -->
+ <div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                       
+                    </span>
+                    <span class="title">Malek yakoudi</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/listeapp">
+                    <span class="icon">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </span>
+                    <span class="title">Appointments</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/listeapp">
+                    <span class="icon">
+                        <ion-icon name="card-outline"></ion-icon>
+                    </span>
+                    <span class="title">Transactions</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/visit">
+                    <span class="icon">
+                        <ion-icon name="medkit-outline"></ion-icon>  
+                    </span>
+                    <span class="title">Visit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/profile">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="title">Profil</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <span class="title">Password</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+
+            <div class="user">
+                <img src="assets/img/customer01.jpg" alt="">
+            </div>
+        </div>
+
+<div class="add-visit-container">
+    <div class="header">
+      <h2>Add Visit</h2>
+      <button class="back-btn">Back</button>
+    </div>
+  
+    <form class="visit-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="visit-date">Visit Date:<span class="required">*</span></label>
+          <input type="date" id="visit-date" placeholder="Visit Date" />
+        </div>
+        <div class="form-group">
+          <label for="patient">Patient:<span class="required">*</span></label>
+          <select id="patient">
+            <option>Patient</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="form-group full-width">
+        <label for="description">Description:</label>
+        <textarea id="description" placeholder="Description"></textarea>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="save-btn">Save</button>
+        <button type="button" class="discard-btn">Discard</button>
+      </div>
+    </form>
+  </div>
+  
