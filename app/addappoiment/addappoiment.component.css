@@ -212,284 +212,67 @@ body {
 }
 
 
-
-
-/* ================== Order Details List ============== */
-.details {
-  position: relative;
-  width: 100%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 30px;
-  /* margin-top: 10px; */
+/* Conteneur principal */
+.appointment-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.details .recentOrders {
-  position: relative;
-  display: grid;
-  min-height: 500px;
-  background: var(--white);
-  padding: 20px;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-}
-
-.details .cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.cardHeader h2 {
-  font-weight: 600;
-  color: var(--blue);
-}
-.cardHeader .btn {
-  position: relative;
-  padding: 5px 10px;
-  background: var(--blue);
-  text-decoration: none;
-  color: var(--white);
-  border-radius: 6px;
-}
-
-.details table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-.details table thead td {
-  font-weight: 600;
-}
-.details .recentOrders table tr {
-  color: var(--black1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.details .recentOrders table tr:last-child {
-  border-bottom: none;
-}
-.details .recentOrders table tbody tr:hover {
-  background: var(--blue);
-  color: var(--white);
-}
-.details .recentOrders table tr td {
-  padding: 10px;
-}
-.details .recentOrders table tr td:last-child {
-  text-align: end;
-}
-.details .recentOrders table tr td:nth-child(2) {
-  text-align: end;
-}
-.details .recentOrders table tr td:nth-child(3) {
+/* Titre */
+.appointment-container h2 {
   text-align: center;
-}
-.status.delivered {
-  padding: 2px 4px;
-  background: #8de02c;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.pending {
-  padding: 2px 4px;
-  background: #e9b10a;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.return {
-  padding: 2px 4px;
-  background: #f00;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.status.inProgress {
-  padding: 2px 4px;
-  background: #1795ce;
-  color: var(--white);
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 500;
-}
-body {
-  font-family: Arial, sans-serif;
-  background: #f2f4f8;
-  margin: 0;
-  padding: 0;
+  color: #333;
+  margin-bottom: 25px;
 }
 
-.container2 {
-  background: #fff;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 30px 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 30px;
-}
-
-form .row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+/* Champs du formulaire */
+form div {
   margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.form-group {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-label {
-  margin-bottom: 5px;
-  font-weight: 600;
-  color: #333;
+/* Label */
+form label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #444;
 }
 
-label span {
-  color: red;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="date"],
-select {
-  padding: 10px;
+/* Input */
+form input {
+  padding: 10px 14px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
 }
 
-.phone-input {
-  display: flex;
-  gap: 10px;
+form input:focus {
+  outline: none;
+  border-color: #6366f1; /* Indigo */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
-.phone-input select {
-  width: 80px;
-}
-
-.availability {
-  margin: 20px 0;
-}
-
-.legend {
-  margin: 10px 0;
-}
-
-.legend span {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  vertical-align: middle;
-  border-radius: 3px;
-}
-
-.legend .booked {
-  background: #f44336;
-}
-
-.legend .available {
-  background: #4caf50;
-  margin-left: 15px;
-}
-
-.no-slots {
-  font-style: italic;
-  color: #555;
-}
-
-.submit-btn {
-  display: block;
-  width: 200px;
-  margin: 0 auto;
-  padding: 12px;
-  background: linear-gradient(to right, #1795ce, #2b1dc1);
+/* Bouton submit */
+form button[type="submit"] {
+  background-color: #6366f1;
   color: white;
+  padding: 12px 20px;
   border: none;
-  border-radius: 25px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover {
-  opacity: 0.9;
-}
-
-
-
-/* ====================== Responsive Design ========================== */
-@media (max-width: 991px) {
-  .navigation {
-    left: -300px;
-  }
-  .navigation.active {
-    width: 300px;
-    left: 0;
-  }
-  .main {
-    width: 100%;
-    left: 0;
-  }
-  .main.active {
-    left: 300px;
-  }
-  .cardBox {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .details {
-    grid-template-columns: 1fr;
-  }
-  .recentOrders {
-    overflow-x: auto;
-  }
-  .status.inProgress {
-    white-space: nowrap;
-  }
-}
-
-@media (max-width: 480px) {
-  .cardBox {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .cardHeader h2 {
-    font-size: 20px;
-  }
-  .user {
-    min-width: 40px;
-  }
-  .navigation {
-    width: 100%;
-    left: -100%;
-    z-index: 1000;
-  }
-  .navigation.active {
-    width: 100%;
-    left: 0;
-  }
-  .toggle {
-    z-index: 10001;
-  }
-  .main.active .toggle {
-    color: #fff;
-    position: fixed;
-    right: 0;
-    left: initial;
-  }
-  
+form button[type="submit"]:hover {
+  background-color: #4f46e5;
 }

@@ -1,185 +1,167 @@
  <!-- =============== Navigation ================ -->
  <div class="container">
-  <div class="navigation">
-      <ul>
-          <li>
-              <a href="#">
-                  <span class="icon">
-                     
-                  </span>
-                  <span class="title">Malek yakoudi</span>
-              </a>
-          </li>
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                       
+                    </span>
+                    <span class="title">Malek yakoudi</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+  
+            <li>
+                <a routerLink="/appointmentslist">
+                    <span class="icon">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </span>
+                    <span >Appointments</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+  
+            <li>
+                <a routerLink="/profile">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="title">Profil</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <span class="title">Password</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+  
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+  
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+  
+            <div class="user">
+                <img src="assets/img/customer01.jpg" alt="">
+            </div>
+        </div>
+ <div class="profile-container">
+  <h2>Mon Profil</h2>
 
-          <li>
-              <a href="#">
-                  <span class="icon">
-                      <ion-icon name="home-outline"></ion-icon>
-                  </span>
-                  <span class="title">Dashboard</span>
-              </a>
-          </li>
+  <!-- Message de succès -->
+  <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
 
-          <li>
-              <a routerLink="/listeapp">
-                  <span class="icon">
-                      <ion-icon name="calendar-outline"></ion-icon>
-                  </span>
-                  <span class="title">Appointments</span>
-              </a>
-          </li>
+  <!-- Message d'erreur -->
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
 
-          <li>
-              <a href="#">
-                  <span class="icon">
-                      <ion-icon name="chatbubble-outline"></ion-icon>
-                  </span>
-                  <span class="title">Messages</span>
-              </a>
-          </li>
-
-          <li>
-              <a routerLink="/profile">
-                  <span class="icon">
-                      <ion-icon name="person-outline"></ion-icon>
-                  </span>
-                  <span class="title">Profil</span>
-              </a>
-          </li>
-
-          <li>
-              <a href="#">
-                  <span class="icon">
-                      <ion-icon name="settings-outline"></ion-icon>
-                  </span>
-                  <span class="title">Settings</span>
-              </a>
-          </li>
-
-          <li>
-              <a href="#">
-                  <span class="icon">
-                      <ion-icon name="lock-closed-outline"></ion-icon>
-                  </span>
-                  <span class="title">Password</span>
-              </a>
-          </li>
-
-          <li>
-              <a href="#">
-                  <span class="icon">
-                      <ion-icon name="log-out-outline"></ion-icon>
-                  </span>
-                  <span class="title">Sign Out</span>
-              </a>
-          </li>
-      </ul>
+  <!-- Affichage du profil -->
+  <div *ngIf="!isEditing" class="profile-details">
+    <p><strong>Nom :</strong> {{ user.name }}</p>
+    <p><strong>Email :</strong> {{ user.email }}</p>
+    <p><strong>Rôle :</strong> {{ user.role | titlecase }}</p>
+    <p><strong>Date de naissance :</strong> {{ user.dateNaiss | date: 'mediumDate' }}</p>
+    <p><strong>Genre :</strong> {{ user.genre }}</p>
+    <p><strong>Groupe sanguin :</strong> {{ user.groupeSanguin }}</p>
+    <p><strong>Spécialité :</strong> {{ user.specialite }}</p>
+    <p><strong>Salaire :</strong> {{ user.salary | currency:'EUR' }}</p>
+    <p><strong>Allergies :</strong> {{ user.allergies }}</p>
+    <p><strong>Code :</strong> {{ user.code }}</p>
+    <button (click)="toggleEdit()" class="action-button">Modifier</button>
   </div>
 
-  <!-- ========================= Main ==================== -->
-  <div class="main">
-      <div class="topbar">
-          <div class="toggle">
-              <ion-icon name="menu-outline"></ion-icon>
-          </div>
-
-          <div class="search">
-              <label>
-                  <input type="text" placeholder="Search here">
-                  <ion-icon name="search-outline"></ion-icon>
-              </label>
-          </div>
-
-          <div class="user">
-              <img src="assets/img/customer01.jpg" alt="">
-          </div>
-      </div>
-
-     
-
-  <div class="container2">
-    <form class="profile-form">
-      <div class="profile-section">
-        <label>Profile:</label>
-       
-      </div>
-
-      <div class="form-group">
-        <label>Full Name:<span class="required">*</span></label>
-        <div class="name-inputs">
-          <input type="text" placeholder="First Name" value="">
-          <input type="text" placeholder="Last Name" value="">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Email:<span class="required">*</span></label>
-        <input type="email" value="">
-      </div>
-
-      <div class="form-group">
-        <label>Time Zone:<span class="required">*</span></label>
-        <select>
-          <option selected></option>
-          <!-- Add other options -->
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Contact Number:<span class="required">*</span></label>
-        <div class="phone-group">
-          <select>
-            <option>+219</option>
-          </select>
-          <input type="text" value="">
-        </div>
-        <small class="valid">Valid Number</small>
-      </div>
-
-      <div class="form-group">
-        <label>Gender:<span class="required">*</span></label>
-        <div class="gender-options">
-          <label><input type="radio" name="gender" checked> Male</label>
-          <label><input type="radio" name="gender"> Female</label>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>DOB:</label>
-          <input type="date">
-        </div>
-        <div class="form-group">
-          <label>Blood Group:</label>
-          <select>
-            <option>Blood Group</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Address 1:</label>
-        <input type="text" placeholder="Address 1">
-      </div>
-
-      <div class="form-group">
-        <label>Address 2:</label>
-        <input type="text" placeholder="Address 2">
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Country:</label>
-          <select>
-            <option>Country</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>State:</label>
-          <select>
-            <option>Select State</option>
-          </select>
-        </div>
-      </div>
-    </form>
-  </div>
+  <!-- Formulaire d'édition -->
+  <form *ngIf="isEditing" (ngSubmit)="saveProfile()">
+    <div class="form-group">
+      <label for="name">Nom *</label>
+      <input id="name" [(ngModel)]="user.name" name="name" type="text" placeholder="Entrez votre nom" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input id="email" [(ngModel)]="user.email" name="email" type="email" placeholder="Entrez votre email" required />
+    </div>
+    <div class="form-group">
+      <label for="dateNaiss">Date de naissance</label>
+      <input id="dateNaiss" [(ngModel)]="user.dateNaiss" name="dateNaiss" type="date" />
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <select id="genre" [(ngModel)]="user.genre" name="genre">
+        <option value="" disabled selected>Sélectionnez</option>
+        <option value="male">Homme</option>
+        <option value="female">Femme</option>
+        <option value="other">Autre</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="groupeSanguin">Groupe sanguin</label>
+      <input id="groupeSanguin" [(ngModel)]="user.groupeSanguin" name="groupeSanguin" type="text" placeholder="Ex: A+" />
+    </div>
+    <div class="form-group">
+      <label for="specialite">Spécialité</label>
+      <input id="specialite" [(ngModel)]="user.specialite" name="specialite" type="text" placeholder="Ex: Cardiologie" />
+    </div>
+    <div class="form-group">
+      <label for="salary">Salaire</label>
+      <input id="salary" [(ngModel)]="user.salary" name="salary" type="number" placeholder="Entrez votre salaire" />
+    </div>
+    <div class="form-group">
+      <label for="allergies">Allergies</label>
+      <input id="allergies" [(ngModel)]="user.allergies" name="allergies" type="text" placeholder="Ex: Pollen, Penicilline" />
+    </div>
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input id="code" [(ngModel)]="user.code" name="code" type="text" placeholder="Entrez votre code" />
+    </div>
+    <button type="submit" class="action-button">Enregistrer</button>
+    <button type="button" (click)="toggleEdit()" class="cancel-button">Annuler</button>
+  </form>
+</div>

@@ -1,1 +1,264 @@
-<p>transaction works!</p>
+ <!-- =============== Navigation ================ -->
+ <div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                       
+                    </span>
+                    <span class="title">Malek yakoudi</span>
+                </a>
+            </li>
+  
+            <li>
+                <a routerLink="/dashboarddoctor">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+  
+            <li>
+                <a routerLink="/appointmentdoc">
+                    <span class="icon">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </span>
+                    <span class="title">Appointments</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/transactionn">
+                    <span class="icon">
+                        <ion-icon name="card-outline"></ion-icon>
+                    </span>
+                    <span class="title">Transactions</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/visit">
+                    <span class="icon">
+                        <ion-icon name="medkit-outline"></ion-icon>  
+                    </span>
+                    <span class="title">Visit</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+  
+            <li>
+                <a routerLink="/profile">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="title">Profil</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                    <span class="title">Password</span>
+                </a>
+            </li>
+  
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+  
+    <!-- ========================= Main ==================== -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+  
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+  
+            <div class="user">
+                <img src="assets/img/customer01.jpg" alt="">
+            </div>
+        </div>
+  
+        <div class="container2">
+            <div class="header-row">
+              <input type="text" class="search" placeholder="Search">
+              <div class="filter-group">
+                <input type="date" class="daterange" >
+                <i class="far fa-calendar-alt" style="color:#007fae; font-size:32px;"></i>
+              </div>
+            </div>
+            <table class="appointments">
+              <thead>
+                <tr>
+                  <th>PATIENT</th>
+                  <th>DATE</th>
+                  <th>PAYMENT METHOD</th>
+                  <th>APPOINTMENT STATUS</th>
+                  <th>AMOUNT</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar avatar-img"></span>
+                      <div>
+                        <div class="patient-name">Camille Grandson</div>
+                        <div class="patient-email">camillegrandgmail.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">08 May 2025 10:11 PM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status booked">Booked</span></td>
+                  <td>$50.00</td>
+                  <td><span class="switch"></span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="avatar"></span>
+                      <div>
+                        <div class="patient-name">Aiko Walsh</div>
+                        <div class="patient-email">patientinfycare.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">08 May 2025 10:11 PM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status booked">Booked</span></td>
+                  <td>$700.00</td>
+                  <td><i class="fa fa-eye action-eye"></i></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="avatar"></span>
+                      <div>
+                        <div class="patient-name">Aiko Walsh</div>
+                        <div class="patient-email">patientinfycare.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">07 May 2025 12:01 PM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status booked">Booked</span></td>
+                  <td>$700.00</td>
+                  <td><span class="switch"></span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="avatar"></span>
+                      <div>
+                        <div class="patient-name">Aiko Walsh</div>
+                        <div class="patient-email">patientinfycare.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">07 May 2025 11:59 AM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status booked">Booked</span></td>
+                  <td>$20.00</td>
+                  <td><i class="fa fa-eye action-eye"></i></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="avatar"></span>
+                      <div>
+                        <div class="patient-name">Mario teste</div>
+                        <div class="patient-email">mariosaviottigmail.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">06 May 2025 11:54 PM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status cancelled">Cancelled</span></td>
+                  <td>$50.00</td>
+                  <td><i class="fa fa-eye action-eye"></i></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar avatar-img"></span>
+                      <div>
+                        <div class="patient-name">Aiko Walsh</div>
+                        <div class="patient-email">patientinfycare.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">06 May 2025 02:49 PM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status cancelled">Cancelled</span></td>
+                  <td>$700.00</td>
+                  <td><i class="fa fa-eye action-eye"></i></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar avatar-img"></span>
+                      <div>
+                        <div class="patient-name">test test</div>
+                        <div class="patient-email">hrgmail.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">06 May 2025 02:39 PM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status checkin">Check In</span></td>
+                  <td>$20.00</td>
+                  <td><i class="fa fa-eye action-eye"></i></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient">
+                      <span class="avatar"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="avatar"></span>
+                      <div>
+                        <div class="patient-name">Albert Agyei</div>
+                        <div class="patient-email">elitecghgmail.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="date-badge">06 May 2025 09:50 AM</span></td>
+                  <td>Manually</td>
+                  <td><span class="status checkin">Check In</span></td>
+                  <td>$1,000.00</td>
+                  <td><i class="fa fa-eye action-eye"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>

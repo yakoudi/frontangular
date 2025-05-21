@@ -2,14 +2,15 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { AboutComponent } from '../about/about.component';
-import { ListeappointmentComponent } from '../listeappointment/listeappointment.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from '../profile/profile.component';
+import { AppointmentListComponent } from '../appointment-list/appointment-list.component';
 
 @Component({
   selector: 'app-dashborad',
   standalone: true, // Assuming this is a standalone component
-  imports: [RouterLink, RouterOutlet, CommonModule, AboutComponent, ListeappointmentComponent , ProfileComponent],
+  imports: [RouterLink, RouterOutlet, CommonModule, AboutComponent ,AppointmentListComponent, ProfileComponent],
   templateUrl: './dashborad.component.html',
   styleUrls: ['./dashborad.component.css'], 
   schemas: [CUSTOM_ELEMENTS_SCHEMA] ,
@@ -38,5 +39,11 @@ export class DashboradComponent implements OnInit , AfterViewInit {
       console.log("script.js chargé !");
     };
   }
+
+
+
+
+
+  
 
 }

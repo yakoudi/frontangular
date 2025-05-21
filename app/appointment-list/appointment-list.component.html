@@ -1,3 +1,5 @@
+
+
  <!-- =============== Navigation ================ -->
  <div class="container">
     <div class="navigation">
@@ -10,41 +12,25 @@
                     <span class="title">Malek yakoudi</span>
                 </a>
             </li>
-
+  
             <li>
-                <a routerLink="/dashboarddoctor">
+                <a href="#">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
                     <span class="title">Dashboard</span>
                 </a>
             </li>
-
+  
             <li>
-                <a routerLink="/appointmentdoc">
+                <a routerLink="/appointmentslist">
                     <span class="icon">
                         <ion-icon name="calendar-outline"></ion-icon>
                     </span>
-                    <span class="title">Appointments</span>
+                    <span >Appointments</span>
                 </a>
             </li>
-            <li>
-                <a routerLink="/transactionn">
-                    <span class="icon">
-                        <ion-icon name="card-outline"></ion-icon>
-                    </span>
-                    <span class="title">Transactions</span>
-                </a>
-            </li>
-
-            <li>
-                <a routerLink="/visit">
-                    <span class="icon">
-                        <ion-icon name="medkit-outline"></ion-icon>  
-                    </span>
-                    <span class="title">Visit</span>
-                </a>
-            </li>
+  
             <li>
                 <a href="#">
                     <span class="icon">
@@ -53,7 +39,7 @@
                     <span class="title">Messages</span>
                 </a>
             </li>
-
+  
             <li>
                 <a routerLink="/profile">
                     <span class="icon">
@@ -62,7 +48,7 @@
                     <span class="title">Profil</span>
                 </a>
             </li>
-
+  
             <li>
                 <a href="#">
                     <span class="icon">
@@ -71,7 +57,7 @@
                     <span class="title">Settings</span>
                 </a>
             </li>
-
+  
             <li>
                 <a href="#">
                     <span class="icon">
@@ -80,7 +66,7 @@
                     <span class="title">Password</span>
                 </a>
             </li>
-
+  
             <li>
                 <a href="#">
                     <span class="icon">
@@ -91,55 +77,97 @@
             </li>
         </ul>
     </div>
-
+  
     <!-- ========================= Main ==================== -->
     <div class="main">
         <div class="topbar">
             <div class="toggle">
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
-
+  
             <div class="search">
                 <label>
                     <input type="text" placeholder="Search here">
                     <ion-icon name="search-outline"></ion-icon>
                 </label>
             </div>
-
+  
             <div class="user">
                 <img src="assets/img/customer01.jpg" alt="">
             </div>
         </div>
+  
+<div class="appointment-list-container">
+  <h2>My Appointments</h2>
 
-<div class="add-visit-container">
-    <div class="header">
-      <h2>Add Visit</h2>
-      <button class="back-btn">Back</button>
-    </div>
-  
-    <form class="visit-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="visit-date">Visit Date:<span class="required">*</span></label>
-          <input type="date" id="visit-date" placeholder="Visit Date" />
-        </div>
-        <div class="form-group">
-          <label for="patient">Patient:<span class="required">*</span></label>
-          <select id="patient">
-            <option>Patient</option>
-          </select>
-        </div>
-      </div>
-  
-      <div class="form-group full-width">
-        <label for="description">Description:</label>
-        <textarea id="description" placeholder="Description"></textarea>
-      </div>
-  
-      <div class="form-actions">
-        <button type="submit" class="save-btn">Save</button>
-        <button type="button" class="discard-btn">Discard</button>
-      </div>
-    </form>
+  <!-- Message d'erreur -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+    <button *ngIf="errorMessage.includes('log in')" (click)="navigateToLogin()" class="filter-button">
+      Go to Login
+    </button>
   </div>
-  
+<button type="button" class="add-button" [routerLink]="['/addappoiment']">
+  Add Appointment
+</button>
+
+  <!-- Tableau des rendez-vous -->
+  <table *ngIf="appointments.length > 0" class="appointment-table">
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appointments">
+        <!-- Patient -->
+        <td>
+          <div class="patient-info">
+
+            <div class="patient-details">
+              <span class="patient-name">{{ appointment.patient?.name }}</span>
+              <span class="patient-email">{{ appointment.patient?.email }}</span>
+            </div>
+          </div>
+        </td>
+
+        <!-- Doctor -->
+        <td>
+          <div class="patient-info">
+   
+            <div class="patient-details">
+              <span class="patient-name">{{ appointment.doctor?.name }}</span>
+              <span class="patient-email">{{ appointment.doctor?.email }}</span>
+            </div>
+          </div>
+        </td>
+
+        <!-- Date -->
+        <td>
+          <span class="date-tag">{{ appointment.date }}</span>
+        </td>
+
+        <!-- Time -->
+        <td>{{ appointment.time }}</td>
+
+        <!-- Status -->
+    
+               <td>{{ appointment.status }}</td>
+        
+
+        <!-- Created At -->
+        <td>{{ appointment.createdAt | date: 'medium' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Aucun rendez-vous -->
+  <div *ngIf="appointments.length === 0 && !errorMessage" class="no-appointments">
+    No appointments found.
+  </div>
+</div>

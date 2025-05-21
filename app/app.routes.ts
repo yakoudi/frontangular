@@ -7,14 +7,19 @@ import { TarifComponent } from './tarif/tarif.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboradComponent } from './dashborad/dashborad.component';
-import { ListeappointmentComponent } from './listeappointment/listeappointment.component';
+
 
 import { ProfileComponent } from './profile/profile.component';
 import { AddappoimentComponent } from './addappoiment/addappoiment.component';
 import { DashboarddoctorComponent } from './dashboarddoctor/dashboarddoctor.component';
 import { VisitComponent } from './visit/visit.component';
 import { AddvisitComponent } from './addvisit/addvisit.component';
+
+import { AppointmentdoctorComponent } from './appointmentdoctor/appointmentdoctor.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AdddossiermedicaleComponent } from './adddossiermedicale/adddossiermedicale.component';
+import { ListedossiermedicaleComponent } from './listedossiermedicale/listedossiermedicale.component';
 
 
 export const routes: Routes = [
@@ -47,18 +52,21 @@ export const routes: Routes = [
       
     },
     {
-        path:'dashboardclient',
+        path:'dashboarddoctor',
         component:DashboarddoctorComponent
       
     },
-    { path: 'listeapp', 
-      component: ListeappointmentComponent
-    },
+  
+    {path :'appointmentdoc' , component: AppointmentdoctorComponent},
+   
 
     { path: 'profile', component: ProfileComponent},
     { path: 'addappoiment', component: AddappoimentComponent},
     {path :'visit' , component:VisitComponent},
     {path :'addvisit' , component:AddvisitComponent},
-    {path : 'transaction ' , component:TransactionComponent}
+    {path : 'transactionn' , component : TransactionComponent},
+    { path: 'appointmentslist', component: AppointmentListComponent },
+    {path:'adddossier', component :AdddossiermedicaleComponent},
+    {path:'listedossier', component: ListedossiermedicaleComponent}
    
 ];

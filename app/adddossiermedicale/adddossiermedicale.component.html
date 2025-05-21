@@ -1,0 +1,11 @@
+<h2>Ajouter un Dossier Médical</h2>
+
+<form (ngSubmit)="addDossier()">
+  <input [(ngModel)]="newDossier.name" name="name" placeholder="Nom du dossier" required />
+  <input [(ngModel)]="newDossier.doctorId" name="doctorId" type="number" placeholder="ID Médecin" required />
+  <input [(ngModel)]="newDossier.patientId" name="patientId" type="number" placeholder="ID Patient" required />
+  <button type="submit">Ajouter</button>
+</form>
+
+<div *ngIf="successMessage" style="color: green">{{ successMessage }}</div>
+<div *ngIf="errorMessage" style="color: red">{{ errorMessage }}</div>

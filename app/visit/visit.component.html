@@ -12,7 +12,7 @@
             </li>
   
             <li>
-                <a href="#">
+                <a routerLink="/dashboarddoctor">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
                     </span>
@@ -21,7 +21,7 @@
             </li>
   
             <li>
-                <a routerLink="/listeapp">
+                <a routerLink="/appointmentdoc">
                     <span class="icon">
                         <ion-icon name="calendar-outline"></ion-icon>
                     </span>
@@ -29,7 +29,7 @@
                 </a>
             </li>
             <li>
-                <a routerLink="/listeapp">
+                <a routerLink="/transactionn">
                     <span class="icon">
                         <ion-icon name="card-outline"></ion-icon>
                     </span>
@@ -115,68 +115,58 @@
   
   
         <!-- ================ Order Details List ================= -->
-        <div class="container2">
-            <div class="tablelistee">
-                <div class="cardHeader">
-                    <h2>Appointments</h2>
-                    <a routerLink="/addvisit" class="btn">Add Visit</a>
-                </div>
-  
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Patient </td>
-                            <td>Visit Date </td>
-                           
-                            <td>Action </td>
-                        </tr>
-                    </thead>
-  
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            
-                            <td></td>
-                        </tr>
-  
-                        <tr>
-                            <td></td>
-                            <td></td>
-                           
-                            <td></td>
-                        </tr>
-  
-                        <tr>
-                            <td></td>
-                            <td></td>
-                         
-                            <td></td>
-                        </tr>
-  
-                        <tr>
-                            <td></td>
-                            <td></td>
-                           
-                            <td></td>
-                        </tr>
-  
-                        <tr>
-                            <td></td>
-                            <td></td>
-                           
-                            <td></td>
-                        </tr>
-  
-  
-                    </tbody>
-                </table>
+        <div class="main-container">
+            <div class="header-bar">
+              <input type="text" class="search-input" placeholder="Search">
+              <button class="add-btn" routerLink="/addvisit">Add Visit</button>
             </div>
-  
-            <!-- ================= New Customers ================ -->
-            
-  
-            
-  
-  
-      
+            <table class="visit-table">
+              <thead>
+                <tr>
+                  <th>PATIENT <i class="fa fa-sort"></i></th>
+                  <th>VISIT DATE <i class="fa fa-sort"></i></th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="patient-info">
+                      <img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Albert Agyei">
+                      <div>
+                        <div class="patient-name"><a href="#">Albert Agyei</a></div>
+                        <div class="patient-email">elitecghgmail.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="date-badge">06 May 2025</span>
+                  </td>
+                  <td>
+                    <i class="fa fa-eye action-icon eye"></i>
+                    <i class="fa fa-pen action-icon edit"></i>
+                    <i class="fa fa-trash action-icon delete"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="patient-info">
+                      <img class="avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cheryl Giles">
+                      <div>
+                        <div class="patient-name"><a href="#">Cheryl Giles</a></div>
+                        <div class="patient-email">pocabugmail.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="date-badge">04 May 2025</span>
+                  </td>
+                  <td>
+                    <i class="fa fa-eye action-icon eye"></i>
+                    <i class="fa fa-pen action-icon edit"></i>
+                    <i class="fa fa-trash action-icon delete"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>

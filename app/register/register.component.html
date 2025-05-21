@@ -1,60 +1,128 @@
 <!-- registration.component.html -->
 <div class="warpper">
-    <div class="registration-container">
-      <h1>Registration</h1>
-      <form >
-        <div class="box">
-          <div class="form-group">
-            <label>Name<span class="required">*</span></label>
-            <input type="text" formControlName="name" required>
-          </div>
-  
-          <div class="form-group">
-            <label>Date de naissance<span class="required">*</span></label>
-            <input type="date" formControlName="date_naiss" required>
-          </div>
-        </div>
-  
+  <div class="registration-container">
+    <h1>Registration</h1>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="box">
         <div class="form-group">
-          <label>Email<span class="required">*</span></label>
-          <input type="email" formControlName="email" placeholder="patient@infycare.com" required>
-        </div>
-  
-        <div class="box">
-          <div class="form-group">
-            <label>Password<span class="required">*</span></label>
-            <input type="password" formControlName="password" required>
+          <label>Name<span class="required">*</span></label>
+          <input type="text" formControlName="name" required />
+          <div
+            *ngIf="
+              registrationForm.get('name')?.invalid &&
+              registrationForm.get('name')?.touched
+            "
+            class="error"
+          >
+            Le nom est requis et doit contenir au moins 3 caractères.
           </div>
-  
-          <div class="form-group">
-            <label>Genre<span class="required">*</span></label>
-            <select formControlName="genre" required>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-        </div>
-  
-        <div class="form-group">
-          <label>Role<span class="required">*</span></label>
-          <select formControlName="role" required>
-            <option >choisir ..</option>
-            <option>doctor</option>
-            <option>patient</option>
-          </select>
         </div>
 
-  
-        <div class="checkbox-group">
-         
-          <p>  <input type="checkbox" > I Agree <a href="#">Terms and conditions</a></p>
+        <div class="form-group">
+          <label>Date de naissance<span class="required">*</span></label>
+          <input type="date" formControlName="date_naiss" required />
+          <div
+            *ngIf="
+              registrationForm.get('date_naiss')?.invalid &&
+              registrationForm.get('date_naiss')?.touched
+            "
+            class="error"
+          >
+            La date de naissance est requise.
+          </div>
         </div>
-  
-        <button type="submit" class="submit-btn" >Submit</button>
-  
-        <div class="signin-link">
-          Already have an account? <a [routerLink]="['/login']">Sign in here</a>
+      </div>
+
+      <div class="form-group">
+        <label>Email<span class="required">*</span></label>
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="patient@infycare.com"
+          required
+        />
+        <div
+          *ngIf="
+            registrationForm.get('email')?.invalid &&
+            registrationForm.get('email')?.touched
+          "
+          class="error"
+        >
+          Veuillez entrer un email valide.
         </div>
-      </form>
-    </div>
+      </div>
+
+      <div class="box">
+        <div class="form-group">
+          <label>Password<span class="required">*</span></label>
+          <input type="password" formControlName="password" required />
+          <div
+            *ngIf="
+              registrationForm.get('password')?.invalid &&
+              registrationForm.get('password')?.touched
+            "
+            class="error"
+          >
+            Le mot de passe doit contenir au moins 6 caractères.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Genre<span class="required">*</span></label>
+          <select formControlName="genre" required class="large-select">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <div
+            *ngIf="
+              registrationForm.get('genre')?.invalid &&
+              registrationForm.get('genre')?.touched
+            "
+            class="error"
+          >
+            Le genre est requis.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Role<span class="required">*</span></label>
+        <select formControlName="role" required>
+          <option value="">Choisir...</option>
+          <option value="doctor">Doctor</option>
+          <option value="patient">Patient</option>
+        </select>
+        <div
+          *ngIf="
+            registrationForm.get('role')?.invalid &&
+            registrationForm.get('role')?.touched
+          "
+          class="error"
+        >
+          Le rôle est requis.
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <p>
+          <input type="checkbox" required /> I Agree
+          <a href="#">Terms and conditions</a>
+        </p>
+      </div>
+
+      <button
+        type="submit"
+        class="submit-btn"
+        [disabled]="registrationForm.invalid"
+      >
+        Submit
+      </button>
+
+      <div class="signin-link">
+        Already have an account? <a [routerLink]="['/login']">Sign in here</a>
+      </div>
+    </form>
   </div>
+</div>

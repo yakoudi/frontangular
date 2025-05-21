@@ -216,160 +216,136 @@ body {
 
 /* ================== Order Details List ============== */
 
-.container2 {
-  padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
+body {
+  background: #f2f5fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.tablelistee {
-  background-color: #fff;
+.main-container {
+  max-width: 1600px;
+  margin: 40px auto;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-  overflow-x: auto;
+  box-shadow: 0 2px 16px rgba(44,62,80,0.07);
+  padding: 32px 24px 24px 24px;
 }
 
-.cardHeader {
+.header-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 24px;
 }
 
-.cardHeader h2 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.cardHeader .btn {
-  background: linear-gradient(to right, #776fa1, #2b1dc1);
-  color: #fff;
-  padding: 0.6rem 1.2rem;
+.search-input {
+  width: 300px;
+  padding: 10px 14px;
+  border: 1px solid #e4e7ed;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  background: #f7f9fb;
 }
 
-.cardHeader .btn:hover {
-  background-color: #45a049;
+.add-btn {
+  background: #4665e7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-table {
+.add-btn:hover {
+  background: #274bb5;
+}
+
+.visit-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 16px;
 }
 
-thead {
-  background-color: #f0f0f0;
-}
-
-thead tr {
-  border-bottom: 2px solid #ddd;
-}
-
-thead td {
-  font-weight: bold;
-  color: #555;
-  padding: 1rem;
+.visit-table thead th {
+  background: #f7f9fb;
+  color: #7b7b93;
+  font-weight: 600;
+  padding: 14px 10px;
+  border-bottom: 1.5px solid #e4e7ed;
   text-align: left;
 }
 
-tbody tr {
-  border-bottom: 1px solid #eee;
-  transition: background-color 0.2s;
+.visit-table tbody tr {
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-tbody tr:hover {
-  background-color: #f9f9f9;
+.visit-table td {
+  padding: 18px 10px;
+  vertical-align: middle;
 }
 
-tbody td {
-  padding: 1rem;
-  color: #333;
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.status {
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e4e7ed;
+}
+
+.patient-name a {
+  color: #4665e7;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.patient-email {
+  color: #8a94a6;
+  font-size: 14px;
+}
+
+.date-badge {
+  background: #4665e7;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 14px;
+  font-size: 14px;
   font-weight: 500;
   display: inline-block;
-  text-transform: capitalize;
 }
 
-.status.delivered {
-  background-color: #d4edda;
-  color: #155724;
+.action-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
-.status.pending {
-  background-color: #fff3cd;
-  color: #856404;
+.action-icon.eye {
+  color: #4665e7;
 }
 
-.status.return {
-  background-color: #f8d7da;
-  color: #721c24;
+.action-icon.edit {
+  color: #4665e7;
 }
 
-.status.inProgress {
-  background-color: #d1ecf1;
-  color: #0c5460;
+.action-icon.delete {
+  color: #e74c3c;
 }
 
-
-/* ====================== Responsive Design ========================== */
-@media (max-width: 991px) {
-  .navigation {
-    left: -300px;
-  }
-  .navigation.active {
-    width: 300px;
-    left: 0;
-  }
-  .main {
-    width: 100%;
-    left: 0;
-  }
-  .main.active {
-    left: 300px;
-  }
-  .cardBox {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-
-
-@media (max-width: 480px) {
-  .cardBox {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .cardHeader h2 {
-    font-size: 20px;
-  }
-  .user {
-    min-width: 40px;
-  }
-  .navigation {
-    width: 100%;
-    left: -100%;
-    z-index: 1000;
-  }
-  .navigation.active {
-    width: 100%;
-    left: 0;
-  }
-  .toggle {
-    z-index: 10001;
-  }
-  .main.active .toggle {
-    color: #fff;
-    position: fixed;
-    right: 0;
-    left: initial;
-  }
-  
+.action-icon:hover {
+  opacity: 0.7;
 }

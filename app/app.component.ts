@@ -11,12 +11,19 @@ import { LoginComponent } from './login/login.component';
 import { TeamstartComponent } from "./teamstart/teamstart.component";
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { AuthInterceptor } from './auth.interceptor';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterModule, CommonModule, FooterComponent, HeaderComponent, AboutComponent, ServiceComponent, ContactComponent, TarifComponent, LoginComponent,RegisterComponent, TeamstartComponent,  ReactiveFormsModule],
+  imports: [RouterOutlet , RouterLink, RouterModule, CommonModule, FooterComponent, HeaderComponent, AboutComponent, ServiceComponent, ContactComponent, TarifComponent, LoginComponent,RegisterComponent, TeamstartComponent,  
+    ReactiveFormsModule ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+    providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
 })
 export class AppComponent {
   title = 'frontangprojet';
@@ -25,7 +32,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showNavbarAndFooter = !event.url.includes('/dashboard')&& !event.url.includes('/addappoiment')&& !event.url.includes('/listeapp')&& !event.url.includes('/profile')&& !event.url.includes('/visit') && !event.url.includes('/addvisit')&& !event.url.includes('/transaction');
+        this.showNavbarAndFooter = !event.url.includes('/dashboard')&& !event.url.includes('/addappoiment')&& !event.url.includes('/appointmentslist')&& !event.url.includes('/profile')&& !event.url.includes('/visit') && !event.url.includes('/addvisit')&& !event.url.includes('/transaction') && !event.url.includes('/appointmentdoc') && !event.url.includes('/listedossier');
       }
     });
   }

@@ -58,13 +58,8 @@ input {
     display: flex;
     gap: 20px;
 }
-.checkbox-group {
-    margin: 1.5rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
 
+  
 .submit-btn {
     background: #1a73e8;
     color: white;
@@ -136,5 +131,11 @@ select {
     background-position: right 10px center;
     background-repeat: no-repeat;
     background-size: 12px;
+  }
+  .large-select {
+    width: 100%;         /* ou une taille fixe comme 300px */
+    height: 50px;        /* augmente la hauteur */
+    font-size: 18px;     /* augmente la taille du texte */
+    padding: 8px 70px;
   }
   
