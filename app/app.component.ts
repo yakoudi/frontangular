@@ -32,7 +32,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showNavbarAndFooter = !event.url.includes('/dashboard')&& !event.url.includes('/addappoiment')&& !event.url.includes('/appointmentslist')&& !event.url.includes('/profile')&& !event.url.includes('/visit') && !event.url.includes('/addvisit')&& !event.url.includes('/transaction') && !event.url.includes('/appointmentdoc') && !event.url.includes('/listedossier');
+        this.showNavbarAndFooter = !event.url.includes('/dashboard')&& !event.url.includes('/addappoiment')&& !event.url.includes('/appointmentslist')&& !event.url.includes('/profile')&& !event.url.includes('/visit') && !event.url.includes('/addvisit')&& !event.url.includes('/transaction') && !event.url.includes('/appointmentdoc') && !event.url.includes('/listedossier')  && !event.url.includes('/analyse')  && !event.url.includes('/listedossier') && !event.url.includes('/analyselist');
       }
     });
   }

@@ -10,7 +10,7 @@
                     <span class="title">Malek yakoudi</span>
                 </a>
             </li>
-
+  
             <li>
                 <a routerLink="/dashboarddoctor">
                     <span class="icon">
@@ -19,7 +19,7 @@
                     <span class="title">Dashboard</span>
                 </a>
             </li>
-
+  
             <li>
                 <a routerLink="/appointmentdoc">
                     <span class="icon">
@@ -45,7 +45,7 @@
                     <span class="title">Visit</span>
                 </a>
             </li>
-              <li>
+                 <li>
                 <a routerLink="/analyse">
                     <span class="icon">
                         <ion-icon name="calendar-outline"></ion-icon>
@@ -53,6 +53,7 @@
                     <span class="title">Analyse</span>
                 </a>
             </li>
+
             <li>
                 <a href="#">
                     <span class="icon">
@@ -61,7 +62,7 @@
                     <span class="title">Messages</span>
                 </a>
             </li>
-
+  
             <li>
                 <a routerLink="/profile">
                     <span class="icon">
@@ -70,7 +71,7 @@
                     <span class="title">Profil</span>
                 </a>
             </li>
-
+  
             <li>
                 <a href="#">
                     <span class="icon">
@@ -79,7 +80,7 @@
                     <span class="title">Settings</span>
                 </a>
             </li>
-
+  
             <li>
                 <a href="#">
                     <span class="icon">
@@ -88,7 +89,7 @@
                     <span class="title">Password</span>
                 </a>
             </li>
-
+  
             <li>
                 <a href="#">
                     <span class="icon">
@@ -99,55 +100,46 @@
             </li>
         </ul>
     </div>
-
+  
     <!-- ========================= Main ==================== -->
     <div class="main">
         <div class="topbar">
             <div class="toggle">
                 <ion-icon name="menu-outline"></ion-icon>
             </div>
-
+  
             <div class="search">
                 <label>
                     <input type="text" placeholder="Search here">
                     <ion-icon name="search-outline"></ion-icon>
                 </label>
             </div>
-
+  
             <div class="user">
                 <img src="assets/img/customer01.jpg" alt="">
             </div>
-        </div>
+        </div><!DOCTYPE html>
 
-<div class="add-visit-container">
-    <div class="header">
-      <h2>Add Visit</h2>
-      <button class="back-btn">Back</button>
-    </div>
-  
-    <form class="visit-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="visit-date">Visit Date:<span class="required">*</span></label>
-          <input type="date" id="visit-date" placeholder="Visit Date" />
-        </div>
-        <div class="form-group">
-          <label for="patient">Patient:<span class="required">*</span></label>
-          <select id="patient">
-            <option>Patient</option>
-          </select>
-        </div>
+  <div class="container2">
+    <h1>Create Analysis</h1> <!-- Change to "Edit Analysis" for edit mode -->
+    <form>
+      <div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" id="type" name="type" value="" required>
       </div>
-  
-      <div class="form-group full-width">
-        <label for="description">Description:</label>
-        <textarea id="description" placeholder="Description"></textarea>
+      <div class="form-group">
+        <label for="result">Result</label>
+        <input type="text" id="result" name="result" value="" required>
       </div>
-  
-      <div class="form-actions">
-        <button type="submit" class="save-btn">Save</button>
-        <button type="button" class="discard-btn">Discard</button>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" value="2025-05-21" required>
       </div>
+      <div class="form-group">
+        <label for="dossierMedicalId">Dossier Medical ID</label>
+        <input type="number" id="dossierMedicalId" name="dossierMedicalId" value="1" required>
+      </div>
+      <button type="submit" class="btn btn-primary"   routerLink="/analyselist">Create</button>
+      <a href="index.html" class="btn btn-secondary">Cancel</a>
     </form>
   </div>
-  

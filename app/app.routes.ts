@@ -20,6 +20,8 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AdddossiermedicaleComponent } from './adddossiermedicale/adddossiermedicale.component';
 import { ListedossiermedicaleComponent } from './listedossiermedicale/listedossiermedicale.component';
+import { AnalyseComponent } from './analyse/analyse.component';
+import { ListeanalyseComponent } from './listeanalyse/listeanalyse.component';
 
 
 export const routes: Routes = [
@@ -67,6 +69,9 @@ export const routes: Routes = [
     {path : 'transactionn' , component : TransactionComponent},
     { path: 'appointmentslist', component: AppointmentListComponent },
     {path:'adddossier', component :AdddossiermedicaleComponent},
-    {path:'listedossier', component: ListedossiermedicaleComponent}
+    {path:'listedossier', component: ListedossiermedicaleComponent},
+    {path:'analyse', component: AnalyseComponent},
+     {path:'analyselist', component: ListeanalyseComponent},
    
+
 ];
